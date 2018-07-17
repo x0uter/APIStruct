@@ -1,0 +1,10 @@
+{
+    "routes": [
+        {
+            "path": "teste/{id}",
+            "response": "deleted a test!",
+            "method": "DELETE",
+            "description": "Delete an test"
+        }
+    ]
+}

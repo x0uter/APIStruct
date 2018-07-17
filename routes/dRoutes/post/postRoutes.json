@@ -1,0 +1,16 @@
+{
+    "routes": [
+        {
+            "path": "teste",
+            "response": "inserted a new test!",
+            "method": "POST",
+            "description": "Insert a test!"
+        },
+        {
+            "path": "foo",
+            "response": "inserted a new foo!",
+            "method": "POST",
+            "description": "Insert a foo!"
+        }
+    ]
+}

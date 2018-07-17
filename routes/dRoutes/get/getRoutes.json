@@ -1,0 +1,22 @@
+{
+    "routes": [
+        {
+            "path": "teste",
+            "response": "its a test!",
+            "method": "GET",
+            "description": "um endpoint de teste"
+        },
+        {
+            "path": "foo",
+            "response": "its a foo!",
+            "method": "GET",
+            "description": "um endpoint de foo"
+        },
+        {
+            "path": "bar",
+            "response": "its a bar!",
+            "method": "GET",
+            "description": "um endpoint de bar"
+        }
+    ]
+}

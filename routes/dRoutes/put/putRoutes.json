@@ -1,0 +1,10 @@
+{
+    "routes": [
+        {
+            "path": "teste",
+            "response": "updated a new test!",
+            "method": "PUT",
+            "description": "Update a test!"
+        }
+    ]
+}
