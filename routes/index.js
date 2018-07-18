@@ -4,7 +4,11 @@ var path = require('path');
 
 var router = express.Router();
 
-/* GET home page. */
+/*
+|--------------------------------------------------------------------------
+| GET ENDPOINTS
+|--------------------------------------------------------------------------
+*/
 router.get('/', function (req, res, next) {
   var getRoutes = JSON.parse(fs.readFileSync(path.join(__dirname, './dRoutes/get/getRoutes.json'), 'utf8'));
   var deleteRoutes = JSON.parse(fs.readFileSync(path.join(__dirname, './dRoutes/delete/deleteRoutes.json'), 'utf8'));
@@ -19,5 +23,20 @@ router.get('/', function (req, res, next) {
       putRoutes: putRoutes.routes
   });
 });
+
+router.get('/database', function (req, res, next) {
+  res.send('databaseconfig');
+});
+
+router.get('/createroute', function (req, res, next) {
+  res.send('creatingroute');
+});
+
+/*
+|--------------------------------------------------------------------------
+| POST ENDPOINTS
+|--------------------------------------------------------------------------
+*/
+
 
 module.exports = router;
