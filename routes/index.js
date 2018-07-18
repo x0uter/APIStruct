@@ -16,16 +16,17 @@ router.get('/', function (req, res, next) {
   var putRoutes = JSON.parse(fs.readFileSync(path.join(__dirname, './dRoutes/put/putRoutes.json'), 'utf8'));
 
   res.render('index', { 
-      title: 'API Struct',
-      getRoutes: getRoutes.routes, 
-      deleteRoutes: deleteRoutes.routes,
-      postRoutes: postRoutes.routes,
-      putRoutes: putRoutes.routes
+    title: 'API Struct',
+    getRoutes: getRoutes.routes, 
+    deleteRoutes: deleteRoutes.routes,
+    postRoutes: postRoutes.routes,
+    putRoutes: putRoutes.routes
   });
 });
 
 router.get('/database', function (req, res, next) {
-  res.render('database', {title: 'API Struct'});
+  var db = JSON.parse(fs.readFileSync(path.join(__dirname, '../db.json'), 'utf8'));
+  res.render('database', {title: 'API Struct', db: db});
 });
 
 router.get('/createroute', function (req, res, next) {
@@ -37,6 +38,19 @@ router.get('/createroute', function (req, res, next) {
 | POST ENDPOINTS
 |--------------------------------------------------------------------------
 */
+router.post('/database', function (req, res, next) {
+  const dbconfig = {
+    "server": req.body.server,
+    "user": req.body.user,
+    "password": req.body.password,
+    "database": req.body.database
+  }
+
+  fs.writeFileSync(path.join(__dirname, '../db.json'), JSON.stringify(dbconfig, null, "\t"));
+
+  res.redirect('/');
+});
+
 
 
 module.exports = router;
