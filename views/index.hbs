@@ -16,15 +16,14 @@
                         <div class="table-container">
                             <table class="table table-filter">
                                 <tbody>
-                                    <!-- /api endpoint -->
                                     {{#each getRoutes}}
-                                    <!-- api endpoint -->
+                                    <!-- api GET endpoints -->
                                     <tr data-status="{{method}}">
                                         <td>
                                             <div class="media">
                                                 <div class="media-body">
                                                     <span class="media-meta pull-right">
-                                                        <button type="button" class="btn btn-danger btn-sm">x</button>
+                                                        <button type="button" class="btn btn-danger btn-sm" onClick="deleteRoute('{{method}}', '{{path}}')">x</button>
                                                     </span>
                                                     <h4 class="title">
                                                         api/{{path}}
@@ -35,16 +34,16 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <!-- /api endpoint -->
+                                    <!-- /api GET endpoints -->
                                     {{/each}}
                                     {{#each postRoutes}}
-                                    <!-- api endpoint -->
+                                    <!-- api POST endpoints -->
                                     <tr data-status="{{method}}">
                                         <td>
                                             <div class="media">
                                                 <div class="media-body">
                                                     <span class="media-meta pull-right">
-                                                        <button type="button" class="btn btn-danger btn-sm">x</button>
+                                                        <button type="button" class="btn btn-danger btn-sm" onClick="deleteRoute('{{method}}', '{{path}}')">x</button>
                                                     </span>
                                                     <h4 class="title">
                                                         api/{{path}}
@@ -55,16 +54,16 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <!-- /api endpoint -->
+                                    <!-- /api POST endpoints -->
                                     {{/each}}
                                     {{#each putRoutes}}
-                                    <!-- api endpoint -->
+                                    <!-- api PUT endpoints -->
                                     <tr data-status="{{method}}">
                                         <td>
                                             <div class="media">
                                                 <div class="media-body">
                                                     <span class="media-meta pull-right">
-                                                        <button type="button" class="btn btn-danger btn-sm">x</button>
+                                                        <button type="button" class="btn btn-danger btn-sm" onClick="deleteRoute('{{method}}', '{{path}}')">x</button>
                                                     </span>
                                                     <h4 class="title">
                                                         api/{{path}}
@@ -75,16 +74,16 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <!-- /api endpoint -->
+                                    <!-- /api PUT endpoints -->
                                     {{/each}}
                                     {{#each deleteRoutes}}
-                                    <!-- api endpoint -->
+                                    <!-- api DELETE endpoints -->
                                     <tr data-status="{{method}}">
                                         <td>
                                             <div class="media">
                                                 <div class="media-body">
                                                     <span class="media-meta pull-right">
-                                                        <button type="button" class="btn btn-danger btn-sm">x</button>
+                                                        <button type="button" class="btn btn-danger btn-sm" onClick="deleteRoute('{{method}}', '{{path}}')">x</button>
                                                     </span>
                                                     <h4 class="title">
                                                         api/{{path}}
@@ -95,7 +94,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <!-- /api endpoint -->
+                                    <!-- /api DELETE endpoints -->
                                     {{/each}}
                                 </tbody>
                             </table>
