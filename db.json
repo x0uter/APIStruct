@@ -1,6 +1,6 @@
 {
-   "server": null,
-   "user": null,
-   "password": null,
-   "database": null
+	"server": "",
+	"user": "",
+	"password": "",
+	"database": ""
 }
