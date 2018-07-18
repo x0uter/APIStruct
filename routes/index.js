@@ -25,11 +25,11 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/database', function (req, res, next) {
-  res.send('databaseconfig');
+  res.render('database', {title: 'API Struct'});
 });
 
 router.get('/createroute', function (req, res, next) {
-  res.send('creatingroute');
+  res.render('createroute', {title: 'API Struct'});
 });
 
 /*
