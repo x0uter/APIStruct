@@ -17,6 +17,18 @@
             "response": "its a bar!",
             "method": "GET",
             "description": "um endpoint de bar"
+        },
+        {
+            "path": "collision",
+            "response": "its a collision!",
+            "method": "GET",
+            "description": "um endpoint de collision"
+        },
+        {
+            "path": "users",
+            "response": "its a users!",
+            "method": "GET",
+            "description": "um endpoint de users"
         }
     ]
 }

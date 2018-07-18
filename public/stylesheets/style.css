@@ -1,17 +1,19 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	max-width: 100%;
+	overflow-x: hidden;
 }
 
 a {
-  color: #00B7FF;
+  	color: #00B7FF;
 }
 
 img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 30%;
-  padding-top: 5%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 20%;
+	padding-top: 5%;
 }
 
 .content h1 {
@@ -81,21 +83,31 @@ img {
 	margin-right: 20px;
 }
 .table-filter .media .title span.GET {
-  color: #5cb85c;
-  font-size: 17px;
+	color: #5cb85c;
+	font-size: 17px;
 }
 .table-filter .media .title span.POST {
-  color: #5bc0de;
-  font-size: 17px;
+	color: #5bc0de;
+	font-size: 17px;
 }
 .table-filter .media .title span.PUT {
-  color: #f0ad4e;
-  font-size: 17px;
+	color: #f0ad4e;
+	font-size: 17px;
 }
 .table-filter .media .title span.DELETE {
-  color: #d9534f;
-  font-size: 17px;
+	color: #d9534f;
+	font-size: 17px;
 }
 .table-filter .media .summary {
 	font-size: 14px;
+}
+
+footer{
+    background-color: #FFF;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 25px;
+    text-align: center;
 }
