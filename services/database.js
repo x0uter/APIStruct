@@ -13,9 +13,10 @@ module.exports = {
 	'getAllDatabaseTables': getAllDatabaseTables,
 }
 
+
 function getAllDatabaseTables(cb) {
 	connection.connect();
-	connection.query('SELECT * FROM information_schema.tables', function (error, results, fields) {
+	connection.query('SELECT * FROM information_schema.tables WHERE TABLE_SCHEMA = '+db.database+'', function (error, results, fields) {
 		connection.end();
 		if (error) return cb(error);
 		console.log(fields);
