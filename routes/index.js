@@ -1,6 +1,7 @@
 var express = require('express');
 var fs = require('fs');
 var path = require('path');
+var dbService = require('./../services/database.js')
 
 var router = express.Router();
 
@@ -29,7 +30,7 @@ router.get('/database', function (req, res, next) {
   res.render('database', { title: 'API Struct', db: db });
 });
 
-router.get('/createroute', function (req, res, next) {
+router.get('/createroute', databaseTables, function (req, res, next) {
   res.render('createroute', { title: 'API Struct' });
 });
 
@@ -93,6 +94,14 @@ function deleteRoute(filePath, route) {
     return elem.path !== route;
   });
   fs.writeFileSync(path.join(__dirname, filePath), JSON.stringify(allRoutes, null, "\t"));
+}
+
+function databaseTables(req, res, next) {
+  dbService.getAllDatabaseTables(function (err, tables) {
+    console.log(tables);
+    req.dbtables = tables;
+    return next();
+  });
 }
 
 
