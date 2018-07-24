@@ -98,7 +98,6 @@ function deleteRoute(filePath, route) {
 
 function databaseTables(req, res, next) {
   dbService.getAllDatabaseTables(function (err, tables) {
-    console.log(tables);
     req.dbtables = tables;
     return next();
   });

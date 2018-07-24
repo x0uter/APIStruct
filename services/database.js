@@ -1,8 +1,9 @@
+const async = require('async')
 const mysql      = require('mysql')
 const db         = require('./../db.json')
 
 var connection = mysql.createConnection({
-	host     : db.host,
+	host     : db.server,
 	user     : db.user,
 	password : db.password,
 	database : db.database
@@ -15,11 +16,12 @@ module.exports = {
 
 
 function getAllDatabaseTables(cb) {
-	connection.connect();
-	connection.query('SELECT * FROM information_schema.tables WHERE TABLE_SCHEMA = '+db.database+'', function (error, results, fields) {
-		connection.end();
+	let tables = []
+	connection.query('SELECT * FROM information_schema.tables WHERE TABLE_SCHEMA = "'+ db.database +'"', function (error, results, fields) {
 		if (error) return cb(error);
-		console.log(fields);
-		cb(null, results)
+		results.forEach((t) => {
+			tables.push(t.TABLE_NAME);
+		})
+		cb(null, tables);
 	});
 }
