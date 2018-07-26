@@ -1,0 +1,55 @@
+{{#if existsDb}}
+	<div class="alert alert-danger col-xs-12 col-sm-6 col-sm-push-3" style="margin-top: 40px;">
+		<strong>Attention!</strong> Please configure <a href="/database"><strong>database</strong></a> first.
+	</div>
+{{else}}
+	<form class="form-horizontal" method="post" action="/createroute">
+		<div class="row" style="padding: 10px 40px 10px 40px">
+		    <h4>Create a new route:</h4>
+		    <div class="panel panel-default">
+		        <div class="panel-body">
+		            <div class="form-group">
+		                <label for="route" class="col-sm-3 control-label">Route</label>
+		                <div class="col-sm-9">
+		                    <input type="text" class="form-control" id="route" name="route">
+		                </div>
+		            </div>
+		            <div class="form-group">
+		                <label for="method" class="col-sm-3 control-label">Method</label>
+		                <div class="col-sm-9">
+		                    <select class="form-control" id="method" name="method">
+		                        <option>GET</option>
+		                        <option>POST</option>
+		                        <option>PUT</option>
+		                        <option>DELETE</option>
+		                    </select>
+		                </div>
+		            </div>
+		            <div class="form-group">
+		                <label for="table" class="col-sm-3 control-label">Table</label>
+		                <div class="col-sm-9">
+		                    <select class="form-control" id="table" name="table">
+		                    	{{#each tables}}
+		                        	<option>{{this}}</option>
+		                        {{/each}}
+		                    </select>
+		                </div>
+		            </div>
+		            <div class="form-group">
+		                <label for="description" class="col-sm-3 control-label">Description</label>
+		                <div class="col-sm-9">
+		                    <input type="text" class="form-control" id="description" name="description">
+		                </div>
+		            </div>
+		            <div class="form-group">
+		                <div class="col-sm-12 text-right">
+		                    <button type="button" class="btn btn-default preview-add-button">
+		                        <span class="glyphicon glyphicon-plus"></span> Create
+		                    </button>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</form>
+{{/if}}

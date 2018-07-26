@@ -30,8 +30,8 @@ router.get('/database', function (req, res, next) {
   res.render('database', { title: 'API Struct', db: db });
 });
 
-router.get('/createroute', databaseTables, function (req, res, next) {
-  res.render('createroute', { title: 'API Struct' });
+router.get('/createroute', existsDatabase, databaseTables, function (req, res, next) {
+  res.render('createroute', { title: 'API Struct', existsDb: req.existsDb, tables: req.dbtables });
 });
 
 /*
@@ -101,6 +101,12 @@ function databaseTables(req, res, next) {
     req.dbtables = tables;
     return next();
   });
+}
+
+function existsDatabase(req, res, next) {
+  var db = JSON.parse(fs.readFileSync(path.join(__dirname, '../db.json'), 'utf8'));
+  req.existsDb = Object.values(db).every(val => val === '');
+  return next();
 }
 
 
